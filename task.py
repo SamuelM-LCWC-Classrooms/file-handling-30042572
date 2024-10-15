@@ -11,6 +11,9 @@ print(task_1())
 
 def task_2():
 
+    # Get input
+    order = input("Enter the food codes you want, separated by commas (For example: S4,P3,P7,X2,D4,C1,W2): ")
+
     # Make dict from csv
     menu = {}
     with open("menu.csv", 'r') as file:
@@ -20,8 +23,6 @@ def task_2():
             # Store price into dict
             menu[code] = float(price)
 
-    # Get input
-    order = input("Enter the food codes you want, separated by commas (For example: S4,P3,P7,X2,D4,C1,W2): ")
     order_codes = [code.strip() for code in order.split(',')]
 
     # Cal total cost from dict
@@ -39,12 +40,12 @@ print(task_2())
 
 def task_3():
 
+    # Get input
+    name = input("Enter a name: ")
+
     # Load json file
     with open("contacts.json", 'r') as file:
         contacts = json.load(file)
-    
-    # Get input
-    name = input("Enter a name: ")
     
     # Get result from json if its there
     if name in contacts:
